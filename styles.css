@@ -1,0 +1,174 @@
+/* Mahmoud Refaie — Personal CV
+   Plain CSS, local assets, and system fonts: no installation required. */
+
+/* 1. Design tokens and document defaults */
+:root {
+  color-scheme: light;
+  --navy: #142438;
+  --blue: #1756b8;
+  --muted: #566579;
+  --line: #dce3ed;
+  --paper: #ffffff;
+  --canvas: #f4f7fb;
+  --tint: #eaf0fa;
+  --content-width: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--navy);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+img { display: block; max-width: 100%; }
+a { color: var(--blue); text-underline-offset: 0.25em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid #b35a00; outline-offset: 5px; border-radius: 2px; }
+h1, h2, h3, p, figure { margin: 0; }
+h1, h2, h3 { line-height: 1.2; }
+h2 { font-size: 1.65rem; letter-spacing: -0.035em; }
+h3 { font-size: 1.2rem; }
+p + p { margin-top: 0.85rem; }
+::selection { background: #bdd4fa; color: var(--navy); }
+.skip-link { position: absolute; top: -6rem; left: 1rem; z-index: 10; padding: 0.65rem 1rem; background: white; }
+.skip-link:focus { top: 1rem; }
+.eyebrow, .small-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
+.eyebrow { color: var(--blue); }
+.small-label { color: var(--muted); }
+.muted { color: var(--muted); }
+
+/* 2. Header and identity */
+.site-header { background: var(--paper); border-bottom: 1px solid var(--line); }
+.header-inner, .footer-inner { max-width: var(--content-width); margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.header-inner { min-height: 88px; }
+.wordmark { font-size: 1.55rem; letter-spacing: -0.07em; font-weight: 800; text-decoration: none; color: var(--navy); }
+.wordmark span { color: var(--blue); }
+nav ul { display: flex; flex-wrap: wrap; gap: 1.7rem; margin: 0; padding: 0; list-style: none; }
+nav a { font-size: 0.9rem; font-weight: 600; color: var(--muted); text-decoration: none; }
+nav a:hover { color: var(--blue); text-decoration: underline; }
+.page-shell { max-width: var(--content-width); margin: 2.5rem auto 4rem; }
+.intro { display: grid; grid-template-columns: 1fr 340px; align-items: center; gap: 3rem; padding: 3.25rem 3.5rem; background: var(--navy); color: white; border-radius: 6px; overflow: hidden; }
+.intro .eyebrow { color: #aec9ff; }
+h1 { margin: 1.1rem 0 1rem; font-size: clamp(3.4rem, 6.3vw, 5.4rem); font-weight: 750; letter-spacing: -0.055em; line-height: 1.02; }
+.name-dot { color: #91b7ff; }
+.professional-title { color: #dfeaff; font-weight: 600; font-size: 1.08rem; }
+.intro-summary { color: #b9c9df; line-height: 1.65; }
+.primary-link { display: inline-block; margin-top: 1.6rem; padding: 0.65rem 1.15rem; border-radius: 3px; background: #f5f8ff; color: var(--navy); font-size: 0.9rem; font-weight: 700; text-decoration: none; }
+.primary-link:hover { background: #dbe8ff; }
+.portrait { align-self: center; }
+.portrait img { width: 100%; aspect-ratio: 1; height: auto; object-fit: cover; border-radius: 4px; background: #dce8f7; }
+.portrait figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.85rem; color: #bccce1; font-size: 0.78rem; }
+.portrait figcaption span:first-child { color: white; font-weight: 600; }
+
+/* 3. CV sections and project */
+.cv-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 4.5rem; padding: 3.75rem 0 0; }
+.main-column, .side-column { min-width: 0; }
+.cv-section + .cv-section { margin-top: 3rem; padding-top: 2.75rem; border-top: 1px solid var(--line); }
+.section-heading { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.section-number { color: var(--blue); font-size: 0.85rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.cv-section > p { color: var(--muted); }
+.cv-section > .profile-lead { color: var(--navy); font-size: 1.4rem; line-height: 1.45; font-weight: 600; letter-spacing: -0.025em; margin-bottom: 1rem; }
+.education-entry { border-left: 3px solid var(--blue); padding-left: 1.4rem; }
+.education-entry h3 { margin-top: 0.6rem; }
+.institution { margin-top: 0.5rem; }
+.date-line { font-size: 0.9rem; color: var(--muted); margin-top: 0.15rem; }
+.coursework { margin-top: 1.6rem; }
+.coursework p { margin-top: 0.35rem; }
+.coursework .muted { font-size: 0.95rem; }
+.project-card { padding: 1.75rem; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--blue); border-radius: 4px; }
+.project-topline { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.2rem; }
+.project-index { color: var(--muted); font-size: 0.8rem; white-space: nowrap; }
+.project-card h3 { font-size: 1.45rem; letter-spacing: -0.03em; }
+.project-card > p { color: var(--muted); margin-top: 0.9rem; }
+.project-details { padding-left: 1.15rem; margin: 1.2rem 0; color: var(--muted); }
+.project-details li + li { margin-top: 0.55rem; }
+.project-details li::marker { color: var(--blue); }
+.tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 1.4rem 0; list-style: none; }
+.tag-list li { background: var(--tint); color: #234977; padding: 0.25rem 0.65rem; font-size: 0.875rem; border-radius: 3px; }
+.project-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; border-top: 1px solid var(--line); padding-top: 1.1rem; }
+.project-links a { font-weight: 600; font-size: 0.9rem; }
+
+/* 4. Skills, contact and footer */
+.side-column { border-left: 1px solid var(--line); padding-left: 2.5rem; }
+.side-section h2 { margin: 0.45rem 0 1.75rem; }
+.skill-group + .skill-group { margin-top: 1.8rem; }
+.skill-group h3 { font-size: 0.95rem; margin-bottom: 0.55rem; }
+.skill-group p { color: var(--muted); margin: 0.2rem 0 0; }
+.contact-section { border-top: 1px solid var(--line); margin-top: 2.75rem; padding-top: 2.25rem; }
+address { font-style: normal; }
+dl { margin: 0; }
+dt { font-size: 0.85rem; font-weight: 700; margin-top: 1.25rem; }
+dd { margin: 0.2rem 0 0; color: var(--muted); overflow-wrap: anywhere; }
+.contact-note { color: var(--muted); font-size: 0.875rem; margin-top: 1.25rem; }
+.site-footer { border-top: 1px solid var(--line); }
+.footer-inner { padding: 1.5rem 0; font-size: 0.875rem; color: var(--muted); }
+.footer-inner p span { margin: 0 0.6rem; color: #748197; }
+.footer-inner a { font-weight: 600; }
+
+/* 5. Responsive layout: the content order remains useful without CSS. */
+@media (max-width: 1200px) {
+  .header-inner, .page-shell, .footer-inner { margin-left: 2rem; margin-right: 2rem; }
+  .intro { grid-template-columns: 1fr 30%; padding: 2.75rem; gap: 2rem; }
+  .cv-layout { gap: 2.5rem; grid-template-columns: minmax(0, 1fr) 270px; }
+  .side-column { padding-left: 2rem; }
+}
+@media (max-width: 800px) {
+  .header-inner { padding: 1rem 0; align-items: flex-start; }
+  nav ul { gap: 0.4rem 1.1rem; justify-content: flex-end; }
+  nav a { display: inline-block; padding: 0.25rem 0; }
+  .intro { padding: 2.25rem; grid-template-columns: 1fr 31%; gap: 1.5rem; }
+  h1 { font-size: 3.5rem; }
+  .desktop-break { display: none; }
+  .portrait figcaption span:last-child { display: none; }
+  .cv-layout { grid-template-columns: 1fr; gap: 2.75rem; padding-top: 2.75rem; }
+  .side-column { border-left: 0; padding-left: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-top: 1px solid var(--line); padding-top: 2.5rem; }
+  .contact-section { margin-top: 0; padding-top: 0; border-top: 0; }
+}
+@media (max-width: 560px) {
+  .header-inner, .page-shell, .footer-inner { margin-left: 1.25rem; margin-right: 1.25rem; }
+  .header-inner { gap: 1.25rem; }
+  nav ul { gap: 0.25rem 0.85rem; }
+  nav a { font-size: 0.875rem; }
+  .page-shell { margin-top: 1.25rem; margin-bottom: 2.5rem; }
+  .intro { grid-template-columns: 1fr; padding: 1.75rem; gap: 2rem; }
+  h1 { font-size: clamp(2.6rem, 12vw, 4rem); }
+  .professional-title { font-size: 1rem; }
+  .portrait { max-width: 230px; }
+  .portrait figcaption { margin-top: 0.6rem; }
+  .portrait figcaption span:last-child { display: inline; }
+  .side-column { grid-template-columns: 1fr; }
+  .contact-section { border-top: 1px solid var(--line); padding-top: 2rem; }
+  .project-card { padding: 1.25rem; }
+  .project-topline { align-items: flex-start; }
+  .footer-inner { align-items: flex-start; flex-direction: column; gap: 0.65rem; }
+}
+
+/* 6. Accessibility and paper output */
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print {
+  @page { size: A4; margin: 15mm; }
+  body { background: white; font-size: 10pt; color: #152438; }
+  .site-header, .skip-link, .primary-link, .project-links, .site-footer { display: none; }
+  .page-shell { margin: 0; max-width: none; }
+  .intro { background: white; color: #152438; padding: 0 0 6mm; border-bottom: 2px solid #152438; border-radius: 0; grid-template-columns: 1fr 30mm; gap: 10mm; }
+  h1 { font-size: 30pt; margin: 3mm 0; }
+  h1 br { display: inline; }
+  h1 br::after { content: " "; }
+  h2 { font-size: 15pt; }
+  .intro .eyebrow, .professional-title, .intro-summary, .portrait figcaption, .portrait figcaption span:first-child { color: #34445b; }
+  .portrait figcaption { display: none; }
+  .cv-layout { grid-template-columns: minmax(0, 1fr) 49mm; gap: 8mm; padding-top: 6mm; }
+  .side-column { display: block; padding: 0 0 0 6mm; border-top: 0; border-left: 1px solid #ccd4df; }
+  .section-heading { margin-bottom: 3mm; break-after: avoid; }
+  .cv-section + .cv-section { margin-top: 6mm; padding-top: 5mm; }
+  .cv-section > .profile-lead { font-size: 12pt; }
+  .project-card { padding: 4mm; }
+  .project-card, .education-entry, .skill-group, .contact-section { break-inside: avoid; }
+  .contact-section { margin-top: 6mm; padding-top: 5mm; border-top: 1px solid #ccd4df; }
+  .skill-group + .skill-group { margin-top: 4mm; }
+  p, li { orphans: 3; widows: 3; }
+}
